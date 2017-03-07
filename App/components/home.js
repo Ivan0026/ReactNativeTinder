@@ -40,14 +40,20 @@ export default class Home extends Component {
       <View style={styles.card}>
         <Image source ={x.image} resizeMode="contain" style ={{width:350, height:350}} />
         <View style={{width:350, height:70, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
-        <View style={{flexDirection:'row', margin:15, marginTop:25,}} >
-        <Text style={{fontSize:20, fontWeight:'300', color:'#444'}}>{x.first_name}, </Text>
-        <Text style={{fontSize:21, fontWeight:'200', color:'#444'}}>{x.age}</Text>
-        </View>
-        <View style={{flexDirection:'row'}}>
-        <View style={{padding:13,  borderLeftWidth:1,borderColor:'#e3e3e3', alignItems:'center', justifyContent:'space-between'}}><Icon name='people-outline' size={20} color="#777" style={{}} /><Text style={{fontSize:16, fontWeight:'200', color:'#555'}}>{x.friends}</Text></View>
-        <View style={{padding:13, borderLeftWidth:1,borderColor:'#e3e3e3', alignItems:'center', justifyContent:'space-between'}}><Icon name='import-contacts' size={20} color="#777" /><Text style={{fontSize:16, fontWeight:'200', color:'#555'}}>{x.interests}</Text></View>
-        </View>
+            <View style={{flexDirection:'row', margin:15, marginTop:25,}} >
+                <Text style={{fontSize:20, fontWeight:'300', color:'#444'}}>{x.first_name}, </Text>
+                <Text style={{fontSize:21, fontWeight:'200', color:'#444'}}>{x.age}</Text>
+            </View>
+            <View style={{flexDirection:'row'}}>
+                <View style={{padding:13,  borderLeftWidth:1,borderColor:'#e3e3e3', alignItems:'center', justifyContent:'space-between'}}>
+                    <Icon name='people-outline' size={20} color="#777" style={{}} />
+                    <Text style={{fontSize:16, fontWeight:'200', color:'#555'}}>{x.friends}</Text>
+                </View>
+                <View style={{padding:13, borderLeftWidth:1,borderColor:'#e3e3e3', alignItems:'center', justifyContent:'space-between'}}>
+                    <Icon name='import-contacts' size={20} color="#777" />
+                    <Text style={{fontSize:16, fontWeight:'200', color:'#555'}}>{x.interests}</Text>
+                </View>
+            </View>
         </View>
       </View>
     )
@@ -81,28 +87,28 @@ export default class Home extends Component {
       <View style={styles.container}>
            <Nav type = 'home' chat = {() => this.props.navigator.replace({id: "messages"})} toProfile = {() => this.props.navigator.replace({id:'profile',
            userData: {card: this.state._currCard}, })} />
-          <SwipeCards
-            ref = {'swiper'}
-            cards={this.state.cards}
-            containerStyle = {{  backgroundColor: '#f7f7f7', alignItems:'center', margin:20}}
-            renderCard={(cardData) => this.Card(cardData)}
-            renderNoMoreCards={() => this.noMore()}
-            handleYup={this.handleYup}
-            handleNope={this.handleNope}
-            loop={true}
-            yupText={'Good!'}
-            noText={'Get Out!'} />
-        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-        <TouchableOpacity style = {styles.buttons} onPress = {() => this.nope()}>
-        <Iconz name='ios-close' size={45} color="#888" style={{}} />
-        </TouchableOpacity>
-        <TouchableOpacity style = {styles.buttonSmall}>
-        <Iconz name='ios-information' size={25} color="#888" style={{}} />
-        </TouchableOpacity>
-        <TouchableOpacity style = {styles.buttons} onPress = {() => this.yup()}>
-        <Iconz name='ios-heart-outline' size={36} color="#888" style={{marginTop:5}} />
-        </TouchableOpacity>
-        </View>
+           <SwipeCards
+                ref = {'swiper'}
+                cards={this.state.cards}
+                containerStyle = {{  backgroundColor: '#f7f7f7', alignItems:'center', margin:10}}
+                renderCard={(cardData) => this.Card(cardData)}
+                renderNoMoreCards={() => this.noMore()}
+                handleYup={this.handleYup}
+                handleNope={this.handleNope}
+                loop={true}
+                yupText={'Good!'}
+                noText={'Get Out!'} />
+            <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+                <TouchableOpacity style = {styles.buttons} onPress = {() => this.nope()}>
+                    <Iconz name='ios-close' size={45} color="#888" style={{}} />
+                </TouchableOpacity>
+                <TouchableOpacity style = {styles.buttonSmall}>
+                    <Iconz name='ios-information' size={25} color="#888" style={{}} />
+                </TouchableOpacity>
+                <TouchableOpacity style = {styles.buttons} onPress = {() => this.yup()}>
+                    <Iconz name='ios-heart-outline' size={36} color="#888" style={{marginTop:5}} />
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -111,8 +117,8 @@ export default class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-
+    // flex: 1,
+    height: 440,
     backgroundColor: '#f7f7f7',
   },
   buttons:{
