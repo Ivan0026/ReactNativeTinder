@@ -27,7 +27,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		89EAB740570449B0A8E70ACA /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A9A601CD45D4ABA8E36EB2F /* Foundation.ttf */; };
 		8A3A249533D04DBC9CA35809 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0ABD8EC8B64257A6443BEF /* libRNVectorIcons.a */; };
-		8C943FF91E6EF91400175776 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C943FD71E6EF8F800175776 /* libRCTAnimation.a */; };
+		8C94405B1E6EFCA500175776 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9440471E6EFC9A00175776 /* libRCTAnimation.a */; };
 		B63BDA25890E49B8804279A0 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC473356064F85BC9FBCC7 /* Ionicons.ttf */; };
 		BE615FDADC9C4FA1AE427DB6 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFF01120AA5D4475BE8078AC /* EvilIcons.ttf */; };
 		CFBEBC23DC07453B9886EECF /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBE7723E1A264C8AAEAEF2B0 /* Octicons.ttf */; };
@@ -120,20 +120,6 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		8C943FD61E6EF8F800175776 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C943FD01E6EF8F800175776 /* RCTAnimation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RCTAnimation;
-		};
-		8C943FD81E6EF8F800175776 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8C943FD01E6EF8F800175776 /* RCTAnimation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
-			remoteInfo = "RCTAnimation-tvOS";
-		};
 		8C943FDD1E6EF8F800175776 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
@@ -183,6 +169,20 @@
 			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
 			remoteInfo = "React-tvOS";
 		};
+		8C9440461E6EFC9A00175776 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C9440401E6EFC9A00175776 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTAnimation;
+		};
+		8C9440481E6EFC9A00175776 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C9440401E6EFC9A00175776 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
+			remoteInfo = "RCTAnimation-tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -213,7 +213,7 @@
 		7B071FC529AB4677A4AAFD41 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		89E3EAF7E33940CAB5B49B22 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
-		8C943FD01E6EF8F800175776 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		8C9440401E6EFC9A00175776 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		CD507D25C50E4A65BF1FD173 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		CFF01120AA5D4475BE8078AC /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		D560699D302B4E3C917C068C /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C943FF91E6EF91400175776 /* libRCTAnimation.a in Frameworks */,
+				8C94405B1E6EFCA500175776 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -386,7 +386,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				8C943FD01E6EF8F800175776 /* RCTAnimation.xcodeproj */,
+				8C9440401E6EFC9A00175776 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -433,11 +433,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C943FD11E6EF8F800175776 /* Products */ = {
+		8C9440411E6EFC9A00175776 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C943FD71E6EF8F800175776 /* libRCTAnimation.a */,
-				8C943FD91E6EF8F800175776 /* libRCTAnimation-tvOS.a */,
+				8C9440471E6EFC9A00175776 /* libRCTAnimation.a */,
+				8C9440491E6EFC9A00175776 /* libRCTAnimation-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -513,8 +513,8 @@
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
 				{
-					ProductGroup = 8C943FD11E6EF8F800175776 /* Products */;
-					ProjectRef = 8C943FD01E6EF8F800175776 /* RCTAnimation.xcodeproj */;
+					ProductGroup = 8C9440411E6EFC9A00175776 /* Products */;
+					ProjectRef = 8C9440401E6EFC9A00175776 /* RCTAnimation.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
@@ -643,20 +643,6 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8C943FD71E6EF8F800175776 /* libRCTAnimation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRCTAnimation.a;
-			remoteRef = 8C943FD61E6EF8F800175776 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8C943FD91E6EF8F800175776 /* libRCTAnimation-tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libRCTAnimation-tvOS.a";
-			remoteRef = 8C943FD81E6EF8F800175776 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		8C943FDE1E6EF8F800175776 /* libRCTImage-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -704,6 +690,20 @@
 			fileType = archive.ar;
 			path = "libReact-tvOS.a";
 			remoteRef = 8C943FF61E6EF8F800175776 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8C9440471E6EFC9A00175776 /* libRCTAnimation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAnimation.a;
+			remoteRef = 8C9440461E6EFC9A00175776 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8C9440491E6EFC9A00175776 /* libRCTAnimation-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTAnimation-tvOS.a";
+			remoteRef = 8C9440481E6EFC9A00175776 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

@@ -85,12 +85,13 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-           <Nav type = 'home' chat = {() => this.props.navigator.replace({id: "messages"})} toProfile = {() => this.props.navigator.replace({id:'profile',
-           userData: {card: this.state._currCard}, })} />
+           <Nav type = 'home'
+                chat = {() => this.props.navigator.replace({id: "messages"})}
+                toProfile = {() => this.props.navigator.replace({id:'profile', userData: {card: this.state._currCard}, })} />
            <SwipeCards
                 ref = {'swiper'}
                 cards={this.state.cards}
-                containerStyle = {{  backgroundColor: '#f7f7f7', alignItems:'center', margin:10}}
+                containerStyle = {{ backgroundColor: '#f7f7f7', alignItems:'center', margin:10, height: 420 }}
                 renderCard={(cardData) => this.Card(cardData)}
                 renderNoMoreCards={() => this.noMore()}
                 handleYup={this.handleYup}
@@ -118,7 +119,6 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    height: 440,
     backgroundColor: '#f7f7f7',
   },
   buttons:{
