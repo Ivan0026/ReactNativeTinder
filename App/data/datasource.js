@@ -2,7 +2,7 @@
 //     Image
 // } from 'react-native';
 
-var API_URL = 'https://randomuser.me/api/?results=20&gender=female'
+exports.API_MESSAGES = 'https://randomuser.me/api/?results=10&gender=female'
 
 var image1 = require('../images/image1.jpeg')
 var image2 = require('../images/image2.jpeg')

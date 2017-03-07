@@ -18,87 +18,87 @@ import {
 } from 'react-native';
 
 import Nav from './global-widgets/nav'
-import SwipeCards from 'react-native-swipe-cards';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Iconz from 'react-native-vector-icons/Ionicons';
-
+import Constants from "../Constants.js";
 import DataSource from '../data/datasource.js';
+import RefreshableListView from "./global-widgets/RefreshableListView.js";
 
 var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
 export default class Messages extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      dataSource: ds.cloneWithRows(DataSource.NewMatches),
-      convoData: ds.cloneWithRows(DataSource.Convos),
+    constructor(props){
+        super(props)
+        this.state = {
+            personsData: null,
+            lastIndex: 0
+        }
     }
-  }
 
-  eachPic(x){
-    return(
-      <TouchableOpacity style={{alignItems:'center'}}>
-      <Image source = {x.image} style={{width:70, height:70, borderRadius:35, margin:10}} />
-      <Text style={{fontWeight:'600', color:'#444'}}>{x.first_name}</Text>
-      </TouchableOpacity>
-      )}
+    renderListViewRow(x, pushNavBarTitle){
+        return(
+            <TouchableOpacity style={{alignItems:'center', flexDirection:'row', marginTop:3, marginBottom:3, borderBottomWidth:1, borderColor:'#e3e3e3'}}>
+                <Image source = {{uri: x.picture.large}} style={{width:70, height:70, borderRadius:35, margin:5}} />
+                <View>
+                    <Text style={{fontWeight:'600', color:'#111'}}>{x.name.title + x.name.first}</Text>
+                    <Text numberOfLines ={1} style={{fontWeight:'400', color:'#888', width:200}}>{x.email}</Text>
+                </View>
+            </TouchableOpacity>
+        )
+    }
 
-    convoRender(x){
-      return(
-              <TouchableOpacity style={{alignItems:'center', flexDirection:'row', marginTop:5, marginBottom:5, borderBottomWidth:1, borderColor:'#e3e3e3'}}>
-              <Image source = {x.image} style={{width:70, height:70, borderRadius:35, margin:10}} />
-              <View>
-              <Text style={{fontWeight:'600', color:'#111'}}>{x.name}</Text>
-              <Text
-              numberOfLines ={1}
-              style={{fontWeight:'400', color:'#888', width:200}}>{x.message}</Text>
-              </View>
-              </TouchableOpacity>)}
+    listViewOnRefresh(page, callback, api_endpoint){
+        var rowsData = [];
+        if (page != 1 && this.state.personsData){
+            this.fetchMorePersons(this.state.personsData, this.state.lastIndex, 10, callback);
+        }
+        else {
+          fetch(api_endpoint)
+          .then((response) => response.json())
+          .then((persons) => {
+              this.setState({personsData: persons});
+              for (var i = 0; i < persons.results.length; i++) {
+                  rowsData.push(persons.results[i]);
+              }
+              callback(rowsData);
+          })
+          .done();
+        }
+    }
+
+    fetchMorePersons(persons, startIndex, amountToAdd, callback){
+        var rowsData = [];
+        fetch(DataSource.API_MESSAGES)
+        .then((response) => response.json())
+        .then((persons) => {
+            this.setState({personsData: persons});
+            for (var i = 0; i < persons.results.length; i++) {
+                rowsData.push(persons.results[i]);
+            }
+            callback(rowsData);
+        })
+        .done();
+    }
 
 
-  render() {
-    return (
-      <View style = {{flex:1}}>
-      <Nav type = 'message' onPress = {() => this.props.navigator.replace({id:'home'})} />
-      <ScrollView style={styles.container}>
-      <TextInput
-      style = {{height:50, }}
-      placeholder="Search"
-      />
-      <View style={styles.matches}>
-      <Text style = {{color:'#da533c', fontWeight:'600', fontSize:12}}>THIS PARTY IS BUZZING WITH BAD BITCHES</Text>
-      <ListView
-      horizontal={true}
-      showsHorizontalScrollIndicator = {false}
-    dataSource={this.state.dataSource}
-    pageSize = {5}
-      renderRow={(rowData) =>this.eachPic(rowData)}
-      />
-      </View>
-      <View style = {{margin:10}}>
-      <Text style = {{color:'#da533c', fontWeight:'600', fontSize:12}}>MESSAGES</Text>
-      <ListView
-      horizontal={false}
-      scrollEnabled = {false}
-      showsHorizontalScrollIndicator = {false}
-    dataSource={this.state.convoData}
-    pageSize = {5}
-      renderRow={(rowData) =>this.convoRender(rowData)}
-      />
-      </View>
+    render() {
+        return (
+            <View style={styles.container}>
+                <Nav type = 'message' onPress = {() => this.props.navigator.replace({id:'home'})} />
+                <RefreshableListView renderRow={(row)=>this.renderListViewRow(row, 'Ask Story')}
+                                 onRefresh={(page, callback)=>this.listViewOnRefresh(page, callback, DataSource.API_MESSAGES)}
+                                 backgroundColor={Constants.COLOR_BACKGROUND}
+                                 style={styles.card}/>
+            </View>
+        )
+    }
 
-        </ScrollView>
-        </View>
-    )
-}
 }
 //onPress = {() => this.renderNope()}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 10
-
+    flex: 1
   },
   matches:{
   borderTopWidth:1,
@@ -127,13 +127,6 @@ const styles = StyleSheet.create({
     borderRadius:25
   },
    card: {
-    flex: 1,
-    alignItems: 'center',
-    alignSelf:'center',
-    borderWidth:2,
-    borderColor:'#e3e3e3',
-    width: 350,
-    height: 420,
+    padding: 5
   }
-
 });

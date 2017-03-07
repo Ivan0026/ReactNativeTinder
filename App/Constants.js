@@ -1,0 +1,6 @@
+exports.COLOR_ACTIVE = '#007733';
+exports.COLOR_INAVTIVE = 'grey';
+exports.COLOR_BACKGROUND = '#F6F6EF';
+exports.COLOR_SEPARATOR = '#CFCFCF';
+exports.COLOR_HIGHLIGHT = '#0089FF';
+exports.COLOR_LINE = '#CCCCCC';

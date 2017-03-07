@@ -81,17 +81,17 @@ export default class Home extends Component {
       <View style={styles.container}>
            <Nav type = 'home' chat = {() => this.props.navigator.replace({id: "messages"})} toProfile = {() => this.props.navigator.replace({id:'profile',
            userData: {card: this.state._currCard}, })} />
-      <SwipeCards
-        ref = {'swiper'}
-        cards={this.state.cards}
-        containerStyle = {{  backgroundColor: '#f7f7f7', alignItems:'center', margin:20}}
-        renderCard={(cardData) => this.Card(cardData)}
-        renderNoMoreCards={() => this.noMore()}
-        handleYup={this.handleYup}
-        handleNope={this.handleNope}
-        loop={true}
-        yupText={'Good!'}
-        noText={'Get Out!'} />
+          <SwipeCards
+            ref = {'swiper'}
+            cards={this.state.cards}
+            containerStyle = {{  backgroundColor: '#f7f7f7', alignItems:'center', margin:20}}
+            renderCard={(cardData) => this.Card(cardData)}
+            renderNoMoreCards={() => this.noMore()}
+            handleYup={this.handleYup}
+            handleNope={this.handleNope}
+            loop={true}
+            yupText={'Good!'}
+            noText={'Get Out!'} />
         <View style={{flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
         <TouchableOpacity style = {styles.buttons} onPress = {() => this.nope()}>
         <Iconz name='ios-close' size={45} color="#888" style={{}} />
