@@ -1,6 +1,7 @@
 # Tinder
 As Tinder
 # Demo
+![alt tag](https://github.com/Ivan0026/ReactNativeTinder/blob/master/ScreenShot-0.png)
 ![alt tag](https://github.com/Ivan0026/ReactNativeTinder/blob/master/ScreenShot-1.png)
 ![alt tag](https://github.com/Ivan0026/ReactNativeTinder/blob/master/ScreenShot-2.png)
 
